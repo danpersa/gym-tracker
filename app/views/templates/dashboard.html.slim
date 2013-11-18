@@ -1,0 +1,22 @@
+.ng-cloak(ng-init="init()")
+
+  div.panel.panel-default.dashboard-list
+    div.panel-heading 
+      h4 Your exercises
+    ul.list-group(ng-show="exercises == 0")
+      li.list-group-item
+        ' You haven't created any exercises yet.      
+    ul.list-group
+      li.list-group-item(ng-repeat="exercise in exercises")
+        button.btn.btn-danger.btn-xs.pull-right(type="button" ng-click="deleteExercise(exercise, $index)")
+          span.glyphicon.glyphicon-ban-circle        
+        a(href="/exercises/{{exercise.id}}") 
+          ' {{exercise.name}}
+
+  form#new_list(ng-submit="createExercise(exerciseName)")
+    .input-group
+      input#exerciseDescription.form-control.input-lg(type="text" autofocus="autofocus" placeholder="Exercise name" maxlength="255" ng-model="exerciseName" data-non-blank)
+      span.input-group-btn
+        button.btn.btn-primary.btn-lg(type="submit") create exercise
+
+  
