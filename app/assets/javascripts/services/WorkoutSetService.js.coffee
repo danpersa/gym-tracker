@@ -13,11 +13,11 @@ angular.module('gymTrackerApp').factory 'WorkoutSet', ($resource, $http) ->
 
     create: (attrs) ->
       dt = new Date
-      month = dt.getMonth()
+      month = dt.getMonth() + 1
       day = dt.getDate()
       year = dt.getFullYear()
       attrs.date = year + '-' + month + '-' + day
-      new @service(workout_set: attrs).$save ((workout_set) -> attrs.id = workoutSet.id), @errorHandler
+      new @service(workout_set: attrs).$save ((workout_set) -> attrs.id = workout_set.id), @errorHandler
       attrs
 
     delete: (workoutSet) ->
