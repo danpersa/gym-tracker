@@ -9,7 +9,7 @@ html
     = csrf_meta_tags
 
   body(ng-app="gymTrackerApp")
-    .container
-      = render "layouts/navigation"
+    = render "layouts/navigation"
+    .container    
       = render "layouts/flash"
       = yield
