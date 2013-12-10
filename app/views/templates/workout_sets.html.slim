@@ -14,12 +14,12 @@
         //.workout-completed
         //  input(type="checkbox" ng-model="workout.completed" ng-change="toggleWorkoutSet(workout)")
         .div.row
-          .div.col-md-5.col-xs-5
+          .div.col-md-5.col-xs-4
             editablespan(model="workoutSet.weight" on-ready="workoutSetEdited(workoutSet)" input-class="form-control")
           .div.col-md-5.col-xs-4
             editablespan(model="workoutSet.reps" on-ready="workoutSetEdited(workoutSet)" input-class="form-control")
-          .div.col-md-2.col-xs-3
-            .workout-buttons
+          .div.col-md-2.col-xs-4
+            .workout-buttons.pull-right
               button.btn.btn-danger.btn-xs.pull-right(type="button" ng-click="deleteWorkoutSet(workoutSet)")
                 span.glyphicon.glyphicon-ban-circle
               calendar(model="workoutSet.date" on-change="datePicked(workoutSet)")
